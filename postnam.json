@@ -1,0 +1,400 @@
+{
+    "collection": {
+        "info": {
+            "_postman_id": "f5cb8cdb-947c-4563-8504-edf0c17d8694",
+            "name": "localhost",
+            "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+            "updatedAt": "2024-02-26T06:05:41.000Z",
+            "uid": "25376306-f5cb8cdb-947c-4563-8504-edf0c17d8694",
+            "createdAt": null,
+            "lastUpdatedBy": null
+        },
+        "item": [
+            {
+                "name": "Data API",
+                "item": [
+                    {
+                        "name": "Find all data",
+                        "id": "bdf9d9a1-05b6-4705-8f0e-c502cb8ffa06",
+                        "protocolProfileBehavior": {
+                            "disableBodyPruning": true
+                        },
+                        "request": {
+                            "method": "GET",
+                            "header": [],
+                            "url": {
+                                "raw": "http://localhost:8080/data",
+                                "protocol": "http",
+                                "host": [
+                                    "localhost"
+                                ],
+                                "port": "8080",
+                                "path": [
+                                    "data"
+                                ],
+                                "query": [
+                                    {
+                                        "key": "_page",
+                                        "value": "1",
+                                        "disabled": true
+                                    },
+                                    {
+                                        "key": "_size",
+                                        "value": "800",
+                                        "disabled": true
+                                    },
+                                    {
+                                        "key": "_sort",
+                                        "value": "id:asc",
+                                        "disabled": true
+                                    },
+                                    {
+                                        "key": "_sort",
+                                        "value": "market:desc",
+                                        "disabled": true
+                                    }
+                                ]
+                            }
+                        },
+                        "response": [],
+                        "uid": "25376306-bdf9d9a1-05b6-4705-8f0e-c502cb8ffa06"
+                    },
+                    {
+                        "name": "Save single data",
+                        "id": "5ab758f5-45d8-466c-a401-57b6b2212333",
+                        "protocolProfileBehavior": {
+                            "disableBodyPruning": true
+                        },
+                        "request": {
+                            "method": "POST",
+                            "header": [],
+                            "body": {
+                                "mode": "raw",
+                                "raw": " {\n        // \"id\": 1,\n        \"market\": \"Government\",\n        \"country\": \"Canada\",\n        \"product\": \"Carretera\",\n        \"discount_band\": \"NONE\",\n        \"discount\": null,\n        \"units_sold\": 1618.5,\n        \"manufacturing_price\": 3.0,\n        \"sale_price\": 20.0,\n        \"gross_sales\": 32370.0,\n        \"sales\": 32370.0,\n        \"cogs\": 16.0,\n        \"profit\": 16185.0,\n        \"date\": \"2014-01-01\",\n        \"month_number\": 1,\n        \"month_name\": \"JANUARY\",\n        \"year\": 2014\n    }",
+                                "options": {
+                                    "raw": {
+                                        "language": "json"
+                                    }
+                                }
+                            },
+                            "url": {
+                                "raw": "http://localhost:8080/data",
+                                "protocol": "http",
+                                "host": [
+                                    "localhost"
+                                ],
+                                "port": "8080",
+                                "path": [
+                                    "data"
+                                ]
+                            }
+                        },
+                        "response": [],
+                        "uid": "25376306-5ab758f5-45d8-466c-a401-57b6b2212333"
+                    },
+                    {
+                        "name": "Save data with XLSX",
+                        "id": "e75f2e26-1ecc-4e26-9d1c-8fcbf86b9699",
+                        "protocolProfileBehavior": {
+                            "disableBodyPruning": true
+                        },
+                        "request": {
+                            "method": "POST",
+                            "header": [],
+                            "body": {
+                                "mode": "formdata",
+                                "formdata": [
+                                    {
+                                        "key": "_file",
+                                        "type": "file",
+                                        "fileNotInWorkingDirectoryWarning": "This file isn't in your working directory. Teammates you share this request with won't be able to use this file. To make collaboration easier you can setup your working directory in Settings.",
+                                        "filesNotInWorkingDirectory": [
+                                            "/home/abhirupbakshi/MyDirectory/assignments/intentbi/Assignment 1 - sample_data.xlsx"
+                                        ],
+                                        "src": "/home/abhirupbakshi/MyDirectory/assignments/intentbi/Assignment 1 - sample_data.xlsx"
+                                    },
+                                    {
+                                        "key": "_sheet",
+                                        "value": "0",
+                                        "type": "text",
+                                        "disabled": true
+                                    },
+                                    {
+                                        "key": "_sheet",
+                                        "value": "1",
+                                        "type": "text",
+                                        "disabled": true
+                                    }
+                                ]
+                            },
+                            "url": {
+                                "raw": "http://localhost:8080/data/xlsx",
+                                "protocol": "http",
+                                "host": [
+                                    "localhost"
+                                ],
+                                "port": "8080",
+                                "path": [
+                                    "data",
+                                    "xlsx"
+                                ]
+                            }
+                        },
+                        "response": [],
+                        "uid": "25376306-e75f2e26-1ecc-4e26-9d1c-8fcbf86b9699"
+                    },
+                    {
+                        "name": "Update data",
+                        "id": "9c7c283f-cc09-4244-86bd-0d434488e30b",
+                        "protocolProfileBehavior": {
+                            "disableBodyPruning": true
+                        },
+                        "request": {
+                            "method": "POST",
+                            "header": [],
+                            "body": {
+                                "mode": "raw",
+                                "raw": " {\n        \"id\": 1,\n        \"market\": \"Government\",\n        \"country\": \"Canada\",\n        \"product\": \"Carretera\",\n        \"discount_band\": \"NONE\",\n        \"discount\": null,\n        \"units_sold\": 1618.5,\n        \"manufacturing_price\": 3.0,\n        \"sale_price\": 20.0,\n        \"gross_sales\": 32370.0,\n        \"sales\": 32370.0,\n        \"cogs\": 16.0,\n        \"profit\": 16185.0,\n        \"date\": \"2014-01-01\",\n        \"month_number\": -1,\n        \"month_name\": \"JANUARY\",\n        \"year\": 2014\n    }",
+                                "options": {
+                                    "raw": {
+                                        "language": "json"
+                                    }
+                                }
+                            },
+                            "url": {
+                                "raw": "http://localhost:8080/data/1",
+                                "protocol": "http",
+                                "host": [
+                                    "localhost"
+                                ],
+                                "port": "8080",
+                                "path": [
+                                    "data",
+                                    "1"
+                                ]
+                            }
+                        },
+                        "response": [],
+                        "uid": "25376306-9c7c283f-cc09-4244-86bd-0d434488e30b"
+                    },
+                    {
+                        "name": "Delete data",
+                        "id": "3a45d5c9-d70f-4103-a5fa-98a6047d59f4",
+                        "protocolProfileBehavior": {
+                            "disableBodyPruning": true
+                        },
+                        "request": {
+                            "method": "DELETE",
+                            "header": [],
+                            "url": {
+                                "raw": "http://localhost:8080/data/1",
+                                "protocol": "http",
+                                "host": [
+                                    "localhost"
+                                ],
+                                "port": "8080",
+                                "path": [
+                                    "data",
+                                    "1"
+                                ]
+                            }
+                        },
+                        "response": [],
+                        "uid": "25376306-3a45d5c9-d70f-4103-a5fa-98a6047d59f4"
+                    }
+                ],
+                "id": "1fcf0fce-2af1-4813-adb9-87c5d42098ea",
+                "uid": "25376306-1fcf0fce-2af1-4813-adb9-87c5d42098ea"
+            },
+            {
+                "name": "User API",
+                "item": [
+                    {
+                        "name": "Create user",
+                        "id": "dc483f0f-2406-4e28-aaed-4c718dcad5a0",
+                        "protocolProfileBehavior": {
+                            "disableBodyPruning": true
+                        },
+                        "request": {
+                            "method": "POST",
+                            "header": [],
+                            "body": {
+                                "mode": "raw",
+                                "raw": "{\n    \"username\": \"u\",\n    \"password\": \"p\"\n}",
+                                "options": {
+                                    "raw": {
+                                        "language": "json"
+                                    }
+                                }
+                            },
+                            "url": {
+                                "raw": "http://localhost:8080/user",
+                                "protocol": "http",
+                                "host": [
+                                    "localhost"
+                                ],
+                                "port": "8080",
+                                "path": [
+                                    "user"
+                                ]
+                            }
+                        },
+                        "response": [],
+                        "uid": "25376306-dc483f0f-2406-4e28-aaed-4c718dcad5a0"
+                    },
+                    {
+                        "name": "Login",
+                        "event": [
+                            {
+                                "listen": "test",
+                                "script": {
+                                    "id": "53ce1e5e-7b16-40a7-a010-0f017e9ba1bb",
+                                    "exec": [
+                                        "let token = pm.response.headers.get('AUTH_TOKEN');",
+                                        "pm.collectionVariables.set('JWT', token);"
+                                    ],
+                                    "type": "text/javascript"
+                                }
+                            },
+                            {
+                                "listen": "prerequest",
+                                "script": {
+                                    "id": "c045725c-5b1b-4a4c-9bb7-e8d7678c6d06",
+                                    "exec": [],
+                                    "type": "text/javascript"
+                                }
+                            }
+                        ],
+                        "id": "ed8cc7d1-15c2-4fca-91e9-adce409d8572",
+                        "protocolProfileBehavior": {
+                            "disableBodyPruning": true
+                        },
+                        "request": {
+                            "auth": {
+                                "type": "basic",
+                                "basic": [
+                                    {
+                                        "key": "password",
+                                        "value": "p",
+                                        "type": "string"
+                                    },
+                                    {
+                                        "key": "username",
+                                        "value": "u",
+                                        "type": "string"
+                                    }
+                                ]
+                            },
+                            "method": "POST",
+                            "header": [],
+                            "url": {
+                                "raw": "http://localhost:8080/auth/login",
+                                "protocol": "http",
+                                "host": [
+                                    "localhost"
+                                ],
+                                "port": "8080",
+                                "path": [
+                                    "auth",
+                                    "login"
+                                ]
+                            }
+                        },
+                        "response": [],
+                        "uid": "25376306-ed8cc7d1-15c2-4fca-91e9-adce409d8572"
+                    },
+                    {
+                        "name": "Logout",
+                        "id": "53adba7f-dc97-4328-9be3-33ebe6434242",
+                        "protocolProfileBehavior": {
+                            "disableBodyPruning": true
+                        },
+                        "request": {
+                            "method": "POST",
+                            "header": [],
+                            "url": {
+                                "raw": "http://localhost:8080/auth/logout",
+                                "protocol": "http",
+                                "host": [
+                                    "localhost"
+                                ],
+                                "port": "8080",
+                                "path": [
+                                    "auth",
+                                    "logout"
+                                ]
+                            }
+                        },
+                        "response": [],
+                        "uid": "25376306-53adba7f-dc97-4328-9be3-33ebe6434242"
+                    },
+                    {
+                        "name": "Delete User",
+                        "id": "50af6e43-f57e-485d-a0a4-f5e09c2e999a",
+                        "protocolProfileBehavior": {
+                            "disableBodyPruning": true
+                        },
+                        "request": {
+                            "method": "DELETE",
+                            "header": [],
+                            "url": {
+                                "raw": "http://localhost:8080/user",
+                                "protocol": "http",
+                                "host": [
+                                    "localhost"
+                                ],
+                                "port": "8080",
+                                "path": [
+                                    "user"
+                                ]
+                            }
+                        },
+                        "response": [],
+                        "uid": "25376306-50af6e43-f57e-485d-a0a4-f5e09c2e999a"
+                    }
+                ],
+                "id": "c9cc4b37-3857-4393-bcdd-e9e48b97573b",
+                "uid": "25376306-c9cc4b37-3857-4393-bcdd-e9e48b97573b"
+            }
+        ],
+        "auth": {
+            "type": "bearer",
+            "bearer": [
+                {
+                    "key": "token",
+                    "value": "{{JWT}}",
+                    "type": "string"
+                }
+            ]
+        },
+        "event": [
+            {
+                "listen": "prerequest",
+                "script": {
+                    "id": "6eca5cf2-7be8-4199-95d1-3487dd57d314",
+                    "type": "text/javascript",
+                    "exec": [
+                        ""
+                    ]
+                }
+            },
+            {
+                "listen": "test",
+                "script": {
+                    "id": "7e75f65f-55fe-4929-b9fa-11f5c9883ed2",
+                    "type": "text/javascript",
+                    "exec": [
+                        ""
+                    ]
+                }
+            }
+        ],
+        "variable": [
+            {
+                "key": "JWT",
+                "value": "",
+                "type": "string"
+            }
+        ]
+    }
+}
