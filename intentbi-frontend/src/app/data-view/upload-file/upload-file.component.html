@@ -1,0 +1,16 @@
+<div class="card flex justify-content-center">
+  <p-toast></p-toast>
+  <p-fileUpload name="_file" [url]="url" [headers]="headers" (onBeforeUpload)="onBeforeUpload($event)" (onUpload)="onUpload($event)" (onError)="onError($event)" [multiple]="false">
+      <ng-template pTemplate="content">
+          <ul *ngIf="uploadedFiles.length">
+              <li *ngFor="let file of uploadedFiles">{{ file.name }} - {{ file.size }} bytes</li>
+          </ul>
+      </ng-template>
+  </p-fileUpload>
+</div>
+
+<div style="margin-top: 2em;">
+  <p-card *ngIf="problems.length" [header]="problemHeader">
+    <p-messages [(value)]="problems"></p-messages>
+  </p-card>
+</div>

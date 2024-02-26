@@ -1,0 +1,28 @@
+<p-toast></p-toast>
+
+<div class="middle">
+  <p-card [header]="formHeaderLabel">
+
+    <form [formGroup]="formGroup">
+      <input placeholder="Id" type="text" formControlName="id" class="hidden"/>
+      <input placeholder="Market" type="text" pInputText formControlName="market" class="block v-margin"/>
+      <input placeholder="Country" type="text" pInputText formControlName="country" class="block v-margin"/>
+      <input placeholder="Product" type="text" pInputText formControlName="product" class="block v-margin"/>
+      <input placeholder="DiscountBand" type="text" pInputText formControlName="discountBand" class="block v-margin"/>
+      <input placeholder="Discount" type="text" pInputText formControlName="discount" class="block v-margin"/>
+      <input placeholder="UnitsSold" type="text" pInputText formControlName="unitsSold" class="block v-margin"/>
+      <input placeholder="ManufacturingPrice" type="text" pInputText formControlName="manufacturingPrice" class="block v-margin"/>
+      <input placeholder="SalePrice" type="text" pInputText formControlName="salePrice" class="block v-margin"/>
+      <input placeholder="GrossSales" type="text" pInputText formControlName="grossSales" class="block v-margin"/>
+      <input placeholder="Sales" type="text" pInputText formControlName="sales" class="block v-margin"/>
+      <input placeholder="COGS" type="text" pInputText formControlName="COGS" class="block v-margin"/>
+      <input placeholder="Profit" type="text" pInputText formControlName="profit" class="block v-margin"/>
+      <p-calendar placeholder="Date" formControlName="date" class="block v-margin"></p-calendar>
+      <input placeholder="Month Number" type="text" pInputText formControlName="monthNumber" class="block v-margin"/>
+      <input placeholder="Month Name" type="text" pInputText formControlName="monthName" class="block v-margin"/>
+      <input placeholder="Year" type="text" pInputText formControlName="year" class="block v-margin"/>
+
+      <p-button [label]="formSumbitLabel" size="large"  type="Submit" [loading]="loading" (onClick)="save()" class="block v-margin-medium middle"></p-button>
+    </form>
+  </p-card>
+</div>

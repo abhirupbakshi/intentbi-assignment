@@ -1,0 +1,62 @@
+<p-toast></p-toast>
+
+<div class="card">
+  <p-table
+      [value]="dataList"
+      [lazy]="true"
+      (onLazyLoad)="loadData($event)"
+      dataKey="id"
+      [tableStyle]="{ 'min-width': '75rem' }"
+      [sortField]="'market'"
+      [sortOrder]="1"
+      [paginator]="true"
+      [rows]="10"
+      [totalRecords]="totalRecords"
+      [loading]="loading"
+  >
+      <ng-template pTemplate="header">
+          <tr>
+              <th pSortableColumn="market">Market <p-sortIcon field="market"></p-sortIcon></th>
+              <th pSortableColumn="country">Country <p-sortIcon field="country"></p-sortIcon></th>
+              <th pSortableColumn="product">Product <p-sortIcon field="product"></p-sortIcon></th>
+              <th pSortableColumn="discountBand">Discount Band <p-sortIcon field="discountBand"></p-sortIcon></th>
+              <th pSortableColumn="discount">Discount <p-sortIcon field="discount"></p-sortIcon></th>
+              <th pSortableColumn="unitsSold">Units Sold <p-sortIcon field="unitsSold"></p-sortIcon></th>
+              <th pSortableColumn="manufacturingPrice">Manufacturing Price <p-sortIcon field="manufacturingPrice"></p-sortIcon></th>
+              <th pSortableColumn="salePrice">Sale Price <p-sortIcon field="salePrice"></p-sortIcon></th>
+              <th pSortableColumn="grossSales">Gross Sales <p-sortIcon field="grossSales"></p-sortIcon></th>
+              <th pSortableColumn="sales">Sales <p-sortIcon field="sales"></p-sortIcon></th>
+              <th pSortableColumn="COGS">COGS <p-sortIcon field="COGS"></p-sortIcon></th>
+              <th pSortableColumn="profit">Profit <p-sortIcon field="profit"></p-sortIcon></th>
+              <th pSortableColumn="date">Date <p-sortIcon field="date"></p-sortIcon></th>
+              <th pSortableColumn="monthNumber">Month Number <p-sortIcon field="monthNumber"></p-sortIcon></th>
+              <th pSortableColumn="monthName">Month Name <p-sortIcon field="monthName"></p-sortIcon></th>
+              <th pSortableColumn="year">Year <p-sortIcon field="year"></p-sortIcon></th>
+              <th></th>
+              <th></th>
+          </tr>
+      </ng-template>
+      <ng-template pTemplate="body" let-data>
+          <tr>
+              <td> {{data.market}} </td>
+              <td> {{data.country}} </td>
+              <td> {{data.product}} </td>
+              <td> {{data.discountBand}} </td>
+              <td> {{data.discount}} </td>
+              <td> {{data.unitsSold}} </td>
+              <td> {{data.manufacturingPrice}} </td>
+              <td> {{data.salePrice}} </td>
+              <td> {{data.grossSales}} </td>
+              <td> {{data.sales}} </td>
+              <td> {{data.COGS}} </td>
+              <td> {{data.profit}} </td>
+              <td> {{data.date | date: 'M/d/yy'}} </td>
+              <td> {{data.monthNumber}} </td>
+              <td> {{data.monthName}} </td>
+              <td> {{data.year}} </td>
+              <td><p-button label="Edit" size="small" (onClick)="editData(data)"></p-button></td>
+              <td><p-button label="Delete" size="small" severity="danger" (onClick)="deleteData(data)"></p-button></td>
+          </tr>
+      </ng-template>
+  </p-table>
+</div>

@@ -1,0 +1,17 @@
+<p-toast></p-toast>
+
+<div class="middle">
+  <p-card header="Login Form">
+
+    <form [formGroup]="formGroup">
+      <input placeholder="Username" required="true" type="text" pInputText formControlName="username" class="block v-margin"/>
+      <input placeholder="Password" required="true" type="password" pInputText formControlName="password" class="block v-margin"/>
+      <p-button label="Login" size="large"  type="Submit" [loading]="loading" (onClick)="login()" class="block v-margin-medium middle"></p-button>
+    </form>
+
+    <div class="middle block">
+      <p-button class="hidden" label="Link" [link]="true"></p-button>
+      <a routerLink="/register" rel="noopener noreferrer" class="p-button font-bold">Register</a>
+    </div>
+  </p-card>
+</div>

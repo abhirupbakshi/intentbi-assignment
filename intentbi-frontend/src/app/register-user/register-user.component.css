@@ -1,0 +1,34 @@
+.middle {
+  width: fit-content;
+  margin: auto;
+}
+
+.block {
+  display: block;
+}
+
+.v-margin {
+  margin-top: 1em;
+  margin-bottom: 1em;
+}
+
+.v-margin-medium {
+  margin-top: 1.5em;
+  margin-bottom: 1.5em;
+}
+
+.full-width {
+  width: 100%;
+}
+
+.bold {
+  font-weight: 500;
+}
+
+.no-text-decoration {
+  text-decoration: none;
+}
+
+.hidden {
+  display: none;
+}
