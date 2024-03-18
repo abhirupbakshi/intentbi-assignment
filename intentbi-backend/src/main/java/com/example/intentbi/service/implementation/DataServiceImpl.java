@@ -75,7 +75,7 @@ public class DataServiceImpl implements DataService {
     for (Data data : Objects.requireNonNull(dataList)) {
       Objects.requireNonNull(data).setId(null);
     }
-
+    
     return dataRepository.saveAll(dataList);
   }
 
